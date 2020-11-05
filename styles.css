@@ -1,0 +1,338 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+html
+{
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 10px;
+}
+a
+{
+    text-decoration: none;
+}
+#wrapper
+{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 15% auto;
+    grid-template-rows: auto 75%;
+    grid-template-areas:
+    "sidebar main"
+    "sidebar main"
+    "sidebar footer";
+}
+.sidebar
+{
+    grid-area: sidebar;
+    background: linear-gradient(326deg, rgba(67,67,67) 0%, #000000 90%)
+}
+nav
+{
+    text-align: center;
+}
+.brand
+{
+    background-color: #fff;
+    padding: 2.5rem 0;
+}
+.brand > .nav-link
+{
+    font-size: 5rem;
+    color: black;
+    letter-spacing: 0.5rem;
+    font-weight: 500;
+}
+.nav-list
+{
+    list-style: none;
+}
+.nav-item
+{
+    padding: 3.5rem 0;
+}
+.nav-link
+{
+    font-size: 1.6rem;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 1rem;
+    letter-spacing: 0.3rem;
+}
+.main-content
+{
+    grid-area: main;
+    background: linear-gradient(326deg, #333333 0%, rgba(255, 20, 40, 0.8) 74%), url("mcu.jpg") center no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.main-content-cta
+{
+    position: absolute;
+    top: 65%;
+    right: 5%;
+    transform: translateY(-55%);
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+}
+.main-content-cta h1
+{
+    font-size: 12rem;
+}
+.main-content-cta h6
+{
+    font-size: 6rem;
+    margin-bottom: 2rem;
+}
+.btn-group
+{
+    display: flex;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+.btn
+{
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 1.5rem 5rem;
+    border: 2px solid rgba(255,255,255,0.6);
+}
+.btn:first-child
+{
+    margin-right: 1rem;
+}
+.footer
+{
+    grid-area: footer;
+    background-image: linear-gradient(315deg, #000428 0%, rgba(0,78,146) 74%);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    display: flex;
+}
+.panc-notice
+{
+    height: inherit;
+    width: 100%;
+    max-width: 40rem;
+    background-color: white;
+    display: flex;
+    font-size: 1.3rem;
+}
+.panc-notice h1
+{
+    margin: auto;
+    text-transform: uppercase;
+    position: relative;
+    padding: 2rem;
+}
+.panc-notice h1::before
+{
+    content: "";
+    position: absolute;
+    left: 2rem;
+    bottom: -1.5rem;
+    width: 13rem;
+    height: 3px;
+    background-image: linear-gradient(315deg, #000428 0%, rgba(0,78,146) 74%);
+}
+.statistics
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5rem;
+}
+.statistics .item
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: rgba(255,255,255,0.7);
+    padding: 2rem;
+}
+.statistics .item i
+{
+    font-size: 10rem;
+    padding: 0 3rem;
+}
+.item-desc p
+{
+    font-size: 1.3rem;
+}
+.item-desc h1
+{
+    font-size: 2.5rem;
+}
+@media (max-width: 1330px)
+{
+    .brand > .nav-link
+    {
+        font-size: 1.5rem;
+    }
+    .nav-link
+    {
+        font-size: 1.3rem;
+    }
+    .statistics .item i
+    {
+        font-size: 5rem;
+        padding: 0 1rem;
+    }
+    .panc-notice
+    {
+        max-width: 25rem;
+        padding: 1rem;
+    }
+    .panc-notice h1
+    {
+        font-size: 1.5rem;
+    }
+    .item-desc p
+    {
+        font-size: 1.1rem;
+    } 
+    .item-desc h1
+    {
+        font-size: 1.5rem;
+    }
+}
+@media (max-width: 960px)
+{
+    #wrapper
+    {
+    grid-template-columns: 100% auto;
+    grid-template-rows: 10% 100% auto;
+    grid-template-areas:
+    "sidebar"
+    "main"
+    "footer";
+    }
+    
+    nav
+    {
+        height: 100%;
+        position: relative;
+    }
+    .nav-list
+    {
+        height: 100%;
+        display: flex;
+    }
+    .brand
+    {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -1.5rem;
+        z-index: 1000;
+        padding: 0.5rem;
+        border-radius: 0.8rem;
+    }
+    .nav-item
+    {
+        margin: auto;
+    }
+    .main-content-cta
+    {
+        position: absolute;
+        top: 50%;
+        right: 10%;
+        transform: translateY(-50%);
+        color: #fff;
+        text-align: center;
+        text-transform: uppercase;
+    }
+}
+@media (max-width: 785px)
+{
+    .panc-notice
+    {
+        max-width: initial;
+    }
+    .panc-notice h1::before
+    {   
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0.8rem;
+        width: 22rem;
+    }
+    .footer
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    .main-content-cta
+    {
+        position: absolute;
+        top: 50%;
+        right: 5%;
+        transform: translateY(-50%);
+        color: #fff;
+        text-align: center;
+        text-transform: uppercase;
+    }
+}
+@media (max-width: 600px)
+{
+    .brand > .nav-link
+    {
+        font-size: 1.4rem;
+        font-weight: 700;
+    }
+    .nav-link
+    {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+    .btn
+    {
+        padding: 0.5rem 1.5rem;
+        font-size: 1.3rem;
+    }
+    .statistics
+    {
+        flex-direction: column;
+    }
+    .statistics .item
+    {
+        flex-direction: column;
+    }
+    .item-desc
+    {
+        text-align: center;
+        color: #fff;
+    }
+    .item-desc h1
+    {
+        margin: 1rem 0;
+    }
+    .main-content-cta
+    {
+        position: absolute;
+        top: 50%;
+        right: 1.5%;
+        transform: translateY(-50%);
+        color: #fff;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .main-content-cta h1
+    {
+        font-size: 7.5rem;
+    }
+    .main-content-cta h6
+    {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    }
+    .nav-item
+    {   
+    padding: 2rem 0;
+    }
+}
